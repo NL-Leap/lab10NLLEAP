@@ -12,14 +12,14 @@ pipeline {
         stage('Build') {
             steps {
                 dir ('starter') {
-                    sh 'mvn -B clean package'
+                    bat 'mvn -B clean package'
                 }
             }
         }
         stage('Test') {
             steps {
                 dir ('starter') {
-                    sh 'mvn -B test'
+                    bat 'mvn -B test'
                 }
             }
 
