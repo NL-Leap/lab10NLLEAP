@@ -24,9 +24,11 @@ pipeline {
             }
 
             post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
+                    always {
+                        dir ('starter') {
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }  
             }
         }
         stage('Archive') {
